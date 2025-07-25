@@ -6,12 +6,14 @@ import 'package:ecommerce_app/cart/models/cart_item.dart';
 import 'package:ecommerce_app/products/models/product_model.dart';
 
 void addToCartHelper(WidgetRef ref, Product product) {
-  ref.read(cartControllerProvider.notifier).addToCart(
-    CartItem(
-      id: product.id,
-      title: product.title,
-      price: product.price,
-      image: product.thumbnail,
-    ),
-  );
+  ref
+      .read(cartControllerProvider.notifier)
+      .addToCart(
+        CartItem(
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.thumbnail,
+        ),
+      );
 }
