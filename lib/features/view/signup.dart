@@ -14,16 +14,14 @@ class Signup extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🖼️ صورة عنوان التسجيل (غيّر المسار حسب الصورة المناسبة)
             Image.asset(
-              "assets/images/vector-2.png", // ✅ تأكد إن الصورة دي موجودة
+              "assets/images/vector-2.png",
               width: double.infinity,
               height: 400,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 18),
 
-            // 🧾 محتوى الفورم داخل كارت
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: DecoratedBox(

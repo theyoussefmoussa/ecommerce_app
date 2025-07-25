@@ -11,20 +11,17 @@ class Login extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        // ⛑️ علشان نتفادى overflow على شاشات صغيرة
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🖼️ صورة العنوان
             Image.asset(
-              "assets/images/vector-1.png", // ✅ غيرها حسب صورة الـ login
+              "assets/images/vector-1.png",
               width: double.infinity,
               height: 400,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 18),
 
-            // 🧾 محتوى الفورم داخل كارت
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: DecoratedBox(

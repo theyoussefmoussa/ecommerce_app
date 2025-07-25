@@ -116,7 +116,6 @@ class _AuthFormState extends State<AuthForm> {
             fillColor: Colors.white,
           ),
 
-          // ✅ Password + Confirm Password جنب بعض
           if (widget.isLogin)
             AuthField(
               controller: _password,
