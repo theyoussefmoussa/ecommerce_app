@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/core/utils/constants/app_text_style.dart';
+
 class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) return 'Email is required.';
@@ -8,7 +10,7 @@ class Validators {
   }
 
   static String? validatePassword(String? value) {
-    if (value == null || value.length < 6) {
+    if (value == null || value.length < AppTextStyle.minPasswordLength) {
       return 'Password must be at least 6 characters.';
     }
     return null;
