@@ -2,6 +2,7 @@
 
 // ignore_for_file: deprecated_member_use
 
+import 'package:ecommerce_app/core/catitalize_all_words.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,13 +26,14 @@ class AboutUsScreen extends ConsumerWidget {
         children: [
           // 👤 Welcome Message
           Text(
-            'Welcome, $displayName 👋',
+            'Welcome, ${capitalizeAllWords(displayName)} 👋',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: deepChocolate,
             ),
           ),
+
           const SizedBox(height: 20),
 
           // 🧾 App Description

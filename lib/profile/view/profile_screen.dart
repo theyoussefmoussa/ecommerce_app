@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, unused_element
 
 import 'package:ecommerce_app/app_router.dart';
+import 'package:ecommerce_app/core/catitalize_all_words.dart';
 import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -38,13 +39,16 @@ class ProfileScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              user?.displayName ?? 'Guest User',
+              user?.displayName?.trim().isNotEmpty ?? false
+                  ? 'Welcome back, ${capitalizeAllWords(user!.displayName!)} 👋'
+                  : 'Welcome, Guest 👤',
               style: const TextStyle(
                 fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 0, 0, 0),
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF1D1A31),
               ),
             ),
+
             Text(
               user?.email ?? 'user@example.com',
               style: const TextStyle(
