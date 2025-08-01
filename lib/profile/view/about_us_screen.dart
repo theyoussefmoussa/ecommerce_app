@@ -1,22 +1,39 @@
 // 📌 Purpose: About Us Page showing app purpose and team information
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
     as app_colors;
+import 'package:ecommerce_app/profile/controller/profile_controller.dart';
 
-class AboutUsScreen extends StatelessWidget {
+class AboutUsScreen extends ConsumerWidget {
   const AboutUsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(profileControllerProvider);
+    final displayName = user?.displayName ?? "Guest";
+
     return Scaffold(
       backgroundColor: app_colors.lightPink,
       appBar: const CustomAppBar(title: 'About Us'),
-
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
+          // 👤 Welcome Message
+          Text(
+            'Welcome, $displayName 👋',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: app_colors.deepChocolate,
+            ),
+          ),
+          const SizedBox(height: 20),
+
           // 🧾 App Description
           Text(
             'Who We Are',
