@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -45,7 +46,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          backgroundColor: const Color(0xFF6B63FF),
+          backgroundColor:maincolor,
           title: const Text(
             '🎉 Order Confirmed!',
             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -93,7 +94,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
         fillColor: const Color(0xFFF3F3F3),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Color(0xFF6B63FF)),
+          borderSide: const BorderSide(color: maincolor),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -125,7 +126,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
             ElevatedButton(
               onPressed: _submit,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF6B63FF),
+                backgroundColor:maincolor,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),

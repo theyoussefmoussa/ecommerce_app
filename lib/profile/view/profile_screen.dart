@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, unused_element
 
 import 'package:ecommerce_app/app_router.dart';
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -60,7 +61,7 @@ class ProfileScreen extends ConsumerWidget {
               onPressed: () =>
                   Navigator.pushNamed(context, '/editProfileScreen'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff6b63ff),
+                backgroundColor:maincolor,
                 foregroundColor: Colors.white,
                 shadowColor: Colors.white,
                 minimumSize: const Size.fromHeight(48),
@@ -79,9 +80,9 @@ class ProfileScreen extends ConsumerWidget {
 
   Widget _buildAppInfoCard(BuildContext context) {
     return Card(
-      color: const Color(0xff6b63ff),
+      color:maincolor,
       elevation: 3,
-      shadowColor: const Color(0xff6b63ff),
+      shadowColor:maincolor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -117,7 +118,7 @@ class ProfileScreen extends ConsumerWidget {
               onTap: () => Navigator.pushNamed(context, '/aboutUsScreen'),
               child: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xff6b63ff),
+                  color:maincolor,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(

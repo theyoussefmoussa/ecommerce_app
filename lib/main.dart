@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/app_router.dart';
-import 'package:ecommerce_app/features/auth/auth_state_provider.dart';
-import 'package:ecommerce_app/features/view/welcome.dart';
+import 'package:ecommerce_app/auth/controller/auth_state_provider.dart';
+import 'package:ecommerce_app/auth/view/welcome.dart';
 import 'package:ecommerce_app/main_screen.dart';
 import 'package:ecommerce_app/core/utils/constants/app_text_style.dart'
     as title;

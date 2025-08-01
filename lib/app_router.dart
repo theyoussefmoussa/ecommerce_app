@@ -1,12 +1,12 @@
 // core design constraints
 
+import 'package:ecommerce_app/auth/view/login.dart';
+import 'package:ecommerce_app/auth/view/signup.dart';
+import 'package:ecommerce_app/auth/view/welcome.dart';
 import 'package:ecommerce_app/cart/view/cart_screen.dart';
 import 'package:ecommerce_app/main_screen.dart';
 import 'package:ecommerce_app/orders/view/delivery_info_page.dart';
 import 'package:ecommerce_app/orders/view/order_summary.dart';
-import 'package:ecommerce_app/features/view/login.dart';
-import 'package:ecommerce_app/features/view/signup.dart';
-import 'package:ecommerce_app/features/view/welcome.dart';
 import 'package:ecommerce_app/products/models/product_model.dart';
 import 'package:ecommerce_app/products/view/product_detail_screen.dart';
 import 'package:ecommerce_app/products/view/product_list_screen.dart';

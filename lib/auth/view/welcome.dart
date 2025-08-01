@@ -1,7 +1,6 @@
+import 'package:ecommerce_app/auth/view/widget/auth_button.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/app_router.dart';
-import 'package:ecommerce_app/features/view/widget/auth_button.dart';
-
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 

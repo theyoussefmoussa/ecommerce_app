@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constant_colors.dart' as app_color;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 
 enum SnackBarType { success, error, info }
 
@@ -8,12 +8,12 @@ class CustomSnackBar {
     BuildContext context,
     String message,
     SnackBarType type, {
-    SnackBarAction? action, // <-- Optional action
+    SnackBarAction? action,
   }) {
     final Color backgroundColor;
     switch (type) {
       case SnackBarType.success:
-        backgroundColor = app_color.priceGreen;
+        backgroundColor = priceGreen;
         break;
       case SnackBarType.error:
         backgroundColor = Colors.redAccent;

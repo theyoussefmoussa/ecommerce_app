@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/cart/view/cart_item_tile.dart';
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/cart/controller/cart_provider.dart';
@@ -15,10 +16,9 @@ class CartScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Cart'),
-        backgroundColor: Color(0xff6b63ff),
+        backgroundColor: maincolor,
       ),
-      backgroundColor: Colors.white, // 🎨 خلفية الشاشة بيضاء
-
+      backgroundColor: Colors.white,  
       body: items.isEmpty
           ? const Center(
               child: Text(
@@ -56,7 +56,7 @@ class CartScreen extends ConsumerWidget {
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xff6b63ff),
+                              color: maincolor,
                             ),
                           ),
                         ],
@@ -64,7 +64,7 @@ class CartScreen extends ConsumerWidget {
                       const SizedBox(height: 10),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff6b63ff),
+                          backgroundColor: maincolor,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 14),
                         ),

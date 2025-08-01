@@ -1,10 +1,10 @@
+import 'package:ecommerce_app/auth/view/auth_form.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/features/view/auth_form.dart';
 import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
     as app_colors;
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Signup extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              "assets/images/vector-2.png",
+              "assets/images/vector-1.png",
               width: double.infinity,
               height: 400,
               fit: BoxFit.cover,
@@ -37,9 +37,9 @@ class Signup extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(20),
-                  child: AuthForm(isLogin: false),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: AuthForm(isLogin: true),
                 ),
               ),
             ),

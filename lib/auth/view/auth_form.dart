@@ -1,8 +1,8 @@
+import 'package:ecommerce_app/auth/controller/firebase_authentication.dart';
+import 'package:ecommerce_app/auth/view/widget/auth_field.dart';
 import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/utils/validator.dart';
-import 'package:ecommerce_app/features/controller/firebase_authentication.dart';
-import 'package:ecommerce_app/features/view/widget/auth_field.dart';
 import 'package:ecommerce_app/main_screen.dart';
 
 class AuthForm extends StatefulWidget {

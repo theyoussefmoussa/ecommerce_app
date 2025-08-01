@@ -1,5 +1,6 @@
 // 📌 Purpose: Shows cart summary before confirming and navigating to delivery info page
 
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,7 @@ class OrderSummary extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               decoration: BoxDecoration(
-                color: const Color(0xff6b63ff),
+                color: maincolor,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
@@ -115,13 +116,13 @@ class OrderSummary extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Icon(Icons.shopping_bag, color: Color(0xff6b63ff)),
+                        Icon(Icons.shopping_bag, color: maincolor),
                         SizedBox(width: 10),
                         Text(
                           'Confirm Order',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Color(0xff6b63ff),
+                            color:maincolor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

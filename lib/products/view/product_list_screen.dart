@@ -1,13 +1,12 @@
 // 📌 Purpose: Shows product grid with search and cart count indicator
 
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/products/controller/product_control.dart';
 import 'package:ecommerce_app/products/view/widget/product_card_widget.dart';
 import 'package:ecommerce_app/app_router.dart';
 import 'package:ecommerce_app/cart/controller/cart_provider.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
 
 class ProductListScreen extends ConsumerWidget {
   const ProductListScreen({super.key});
@@ -23,7 +22,7 @@ class ProductListScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Products'),
-        backgroundColor: Color(0xff6b63ff),
+        backgroundColor:maincolor,
         actions: [
           Stack(
             alignment: Alignment.topRight,
@@ -35,7 +34,7 @@ class ProductListScreen extends ConsumerWidget {
               if (cartCount > 0)
                 CircleAvatar(
                   radius: 8,
-                  backgroundColor: app_colors.errorRed,
+                  backgroundColor: errorRed,
                   child: Text(
                     '$cartCount',
                     style: const TextStyle(fontSize: 12, color: Colors.white),

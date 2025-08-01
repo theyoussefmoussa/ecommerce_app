@@ -1,5 +1,6 @@
 // 📌 Purpose: Allows the user to update their display name (email is shown as read-only)
 
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -69,7 +70,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Edit Profile"),
-        backgroundColor: const Color(0xff6b63ff),
+        backgroundColor: maincolor,
         foregroundColor: Colors.white,
         elevation: 0,
       ),
@@ -118,7 +119,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     : const Text('Save Changes'),
                 onPressed: _isLoading ? null : _updateProfile,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff6b63ff),
+                  backgroundColor:maincolor,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(

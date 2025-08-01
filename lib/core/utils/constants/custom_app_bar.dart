@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -19,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: const TextStyle(color: Colors.white),
       ),
-      backgroundColor: const Color(0xff6b63ff),
+      backgroundColor:maincolor,
       foregroundColor: Colors.white,
       iconTheme: const IconThemeData(color: Colors.white),
       actions: actions,

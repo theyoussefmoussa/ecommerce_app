@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/products/models/product_model.dart';
@@ -10,14 +11,12 @@ class ProductDetailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const primaryColor = Color(0xff6b63ff);
-    const priceColor = Color(0xff00c853);
 
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         title: Text(product.title),
-        backgroundColor: primaryColor,
+        backgroundColor: maincolor,
         foregroundColor: Colors.white,
         elevation: 2,
       ),
@@ -46,7 +45,7 @@ class ProductDetailScreen extends ConsumerWidget {
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: primaryColor,
+                color: maincolor,
               ),
             ),
             const SizedBox(height: 12),
@@ -55,7 +54,7 @@ class ProductDetailScreen extends ConsumerWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
-                color: priceColor,
+                color: priceGreen,
               ),
             ),
             const SizedBox(height: 16),
@@ -81,7 +80,7 @@ class ProductDetailScreen extends ConsumerWidget {
                     action: SnackBarAction(
                       label: "View Cart",
                       onPressed: () => Navigator.pushNamed(context, '/cart'),
-                      textColor: primaryColor,
+                      textColor: maincolor,
                     ),
                   );
                 },
@@ -91,7 +90,7 @@ class ProductDetailScreen extends ConsumerWidget {
                   style: TextStyle(fontSize: 16),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: maincolor,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(

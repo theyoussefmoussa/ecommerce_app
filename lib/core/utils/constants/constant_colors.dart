@@ -6,5 +6,5 @@ const Color mochaBrown = Color(0xFF835858); // #835858
 const Color deepChocolate = Color(0xFF463333); // #463333
 const Color errorRed = Color(0xFFD32F2F); // Error
 const Color warningOrange = Color(0xFFFFA000); // Warning
-const Color infoBlue = Color(0xff6b63ff); // Info
+const Color maincolor = Color(0xff6b63ff); // Info
 const Color priceGreen = Color(0xFF43A047);
