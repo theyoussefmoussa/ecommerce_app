@@ -13,11 +13,9 @@ class SettingsScreen extends ConsumerWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Settings', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xff6b63ff),
+        backgroundColor: const Color(0xff6b63ff),
         foregroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.white,
-        ), // ← هذا السطر لضبط لون الأيقونات
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -108,7 +106,6 @@ class SettingsScreen extends ConsumerWidget {
           ),
         );
       } catch (e) {
-        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
         );
