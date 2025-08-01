@@ -10,7 +10,7 @@ import 'package:ecommerce_app/features/view/welcome.dart';
 import 'package:ecommerce_app/products/models/product_model.dart';
 import 'package:ecommerce_app/products/view/product_detail_screen.dart';
 import 'package:ecommerce_app/products/view/product_list_screen.dart';
-import 'package:ecommerce_app/profile/view/about_us_screen';
+import 'package:ecommerce_app/profile/view/about_us_screen.dart';
 import 'package:ecommerce_app/profile/view/edit_profile_screen.dart';
 import 'package:ecommerce_app/profile/view/settings_screen.dart';
 import 'package:flutter/material.dart';

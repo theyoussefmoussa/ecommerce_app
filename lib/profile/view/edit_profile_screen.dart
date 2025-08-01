@@ -1,5 +1,6 @@
 // 📌 Purpose: Allows the user to update their display name (email is shown as read-only)
 
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/profile/controller/profile_controller.dart';
@@ -40,16 +41,23 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
     if (name.isNotEmpty) {
       await controller.updateDisplayName(name);
+
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('✅ Profile updated successfully')),
+        CustomSnackBar.show(
+          context,
+          '✅ Profile updated successfully',
+          SnackBarType.success,
         );
         Navigator.pop(context);
       }
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('⚠️ Name cannot be empty')));
+      if (mounted) {
+        CustomSnackBar.show(
+          context,
+          '⚠️ Name cannot be empty',
+          SnackBarType.error,
+        );
+      }
     }
 
     if (mounted) setState(() => _isLoading = false);

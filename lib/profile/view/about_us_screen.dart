@@ -1,5 +1,6 @@
 // 📌 Purpose: About Us Page showing app purpose and team information
 
+import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
     as app_colors;
@@ -11,12 +12,8 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: app_colors.lightPink,
-      appBar: AppBar(
-        title: const Text('About Us'),
-        backgroundColor: app_colors.deepChocolate,
-        foregroundColor: Colors.white,
-        elevation: 0,
-      ),
+      appBar: const CustomAppBar(title: 'About Us'),
+
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [

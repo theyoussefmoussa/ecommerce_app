@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/core/widgets/snackbar_utils.dart';
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/products/models/product_model.dart';
@@ -94,7 +94,17 @@ class ProductCardWidget extends ConsumerWidget {
                     child: IconButton(
                       onPressed: () {
                         addToCartHelper(ref, product);
-                        showAddedToCartSnackBar(context);
+                        CustomSnackBar.show(
+                          context,
+                          '✓ Added to cart!',
+                          SnackBarType.success,
+                          action: SnackBarAction(
+                            label: 'View Cart',
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/cart'),
+                            textColor: Colors.white,
+                          ),
+                        );
                       },
                       icon: const Icon(
                         Icons.add_shopping_cart,

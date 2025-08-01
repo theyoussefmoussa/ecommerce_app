@@ -1,5 +1,7 @@
 // 📌 Purpose: Shows cart summary before confirming and navigating to delivery info page
 
+import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/cart/models/cart_item.dart';
 import 'package:ecommerce_app/app_router.dart';
@@ -14,11 +16,7 @@ class OrderSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('My Checkout'),
-        backgroundColor: const Color(0xff6b63ff),
-        foregroundColor: Colors.white,
-      ),
+      appBar: const CustomAppBar(title: 'My Checkout'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -98,17 +96,10 @@ class OrderSummary extends StatelessWidget {
                       if (items.isNotEmpty && total > 0) {
                         Navigator.pushNamed(context, AppRouter.deliveryInfo);
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                              "🛒 Your cart is empty!",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            duration: Duration(seconds: 2),
-                          ),
+                        CustomSnackBar.show(
+                          context,
+                          "🛒 Your cart is empty!",
+                          SnackBarType.info,
                         );
                       }
                     },

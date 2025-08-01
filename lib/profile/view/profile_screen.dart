@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, unused_element
 
 import 'package:ecommerce_app/app_router.dart';
+import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/profile/controller/profile_controller.dart';
@@ -16,15 +17,12 @@ class ProfileScreen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        title: const Text('My Profile'),
-        backgroundColor: const Color(0xff6b63ff),
-        foregroundColor: Colors.white,
+      appBar: CustomAppBar(
+        title: 'My Profile',
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () => Navigator.pushNamed(context, AppRouter.settings),
-            color: const Color.fromARGB(255, 255, 255, 255),
           ),
         ],
       ),

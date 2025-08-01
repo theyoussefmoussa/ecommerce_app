@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/utils/validator.dart';
 import 'package:ecommerce_app/features/controller/firebase_authentication.dart';
@@ -28,11 +29,10 @@ class _AuthFormState extends State<AuthForm> {
 
     if (!widget.isLogin &&
         _password.text.trim() != _confirmPassword.text.trim()) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Passwords do not match'),
-          backgroundColor: Colors.redAccent,
-        ),
+      CustomSnackBar.show(
+        context,
+        'Passwords do not match',
+        SnackBarType.error,
       );
       return;
     }
@@ -54,24 +54,17 @@ class _AuthFormState extends State<AuthForm> {
         context,
         MaterialPageRoute(builder: (_) => const MainScreen()),
       );
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            widget.isLogin ? 'Login Successful' : 'Sign Up Successful',
-            style: const TextStyle(color: Colors.white),
-          ),
-          backgroundColor: const Color(0xFF755dc1),
-        ),
+
+      CustomSnackBar.show(
+        context,
+        widget.isLogin ? 'Login Successful' : 'Sign Up Successful',
+        SnackBarType.success,
       );
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            result.errorMessage ?? 'Authentication failed',
-            style: const TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.redAccent,
-        ),
+      CustomSnackBar.show(
+        context,
+        result.errorMessage ?? 'Authentication failed',
+        SnackBarType.error,
       );
     }
 

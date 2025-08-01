@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart';
 import 'package:ecommerce_app/profile/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,12 +13,7 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Settings', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color(0xff6b63ff),
-        foregroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.white),
-      ),
+      appBar: const CustomAppBar(title: 'Settings'),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -34,15 +31,8 @@ class SettingsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(12),
               side: const BorderSide(color: Colors.grey),
             ),
-            onTap: () async {
-              await profileController.logout();
-              if (context.mounted) {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/',
-                  (route) => false,
-                );
-              }
+            onTap: () {
+              _handleLogout(context, profileController);
             },
           ),
           const SizedBox(height: 12),
@@ -57,14 +47,24 @@ class SettingsScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(12),
               side: const BorderSide(color: Colors.red),
             ),
-            onTap: () => _confirmDeleteAccount(context, profileController),
+            onTap: () {
+              _confirmDeleteAccount(context, profileController);
+            },
           ),
         ],
       ),
     );
   }
 
-  Future<void> _confirmDeleteAccount(
+  void _handleLogout(BuildContext context, ProfileController controller) async {
+    await controller.logout();
+
+    if (!context.mounted) return;
+
+    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
+  void _confirmDeleteAccount(
     BuildContext context,
     ProfileController controller,
   ) async {
@@ -94,22 +94,23 @@ class SettingsScreen extends ConsumerWidget {
       ),
     );
 
-    if (confirm == true) {
-      try {
-        await controller.deleteAccount();
-        if (!context.mounted) return;
-        Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Account deleted successfully.'),
-            backgroundColor: Colors.green,
-          ),
-        );
-      } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
-        );
-      }
+    if (confirm != true) return;
+
+    try {
+      await controller.deleteAccount();
+
+      if (!context.mounted) return;
+
+      Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
+      CustomSnackBar.show(
+        context,
+        'Account deleted successfully.',
+        SnackBarType.success,
+      );
+    } catch (e) {
+      if (!context.mounted) return;
+
+      CustomSnackBar.show(context, 'Error: $e', SnackBarType.error);
     }
   }
 }

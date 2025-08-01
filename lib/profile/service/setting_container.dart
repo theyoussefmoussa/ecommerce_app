@@ -1,12 +1,11 @@
-// lib/features/profile/controller/settings_controller.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart'; // ✅ import your snackbar
 
 class SettingsController {
   /// Deletes the currently signed-in Firebase user.
   static Future<void> deleteAccount(BuildContext context, WidgetRef ref) async {
-    // Ask confirmation before deleting
     final confirm = await showDialog<bool>(
       context: context,
       builder: (_) => AlertDialog(
@@ -34,24 +33,32 @@ class SettingsController {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
         await user.delete();
-        // ignore: use_build_context_synchronously
-        _showSnackbar(context, "Account deleted successfully");
-        // Optional: Navigate to welcome/login page
+
+        if (context.mounted) {
+          CustomSnackBar.show(
+            context,
+            "Account deleted successfully.",
+            SnackBarType.success,
+          );
+          // Optional: Navigate to welcome/login page
+        }
       } else {
-        // ignore: use_build_context_synchronously
-        _showSnackbar(context, "No user is currently logged in.");
+        if (context.mounted) {
+          CustomSnackBar.show(
+            context,
+            "No user is currently logged in.",
+            SnackBarType.info,
+          );
+        }
       }
     } catch (e) {
-      // ignore: use_build_context_synchronously
-      _showSnackbar(context, "Failed to delete account: ${e.toString()}");
-    }
-  }
-
-  static void _showSnackbar(BuildContext context, String message) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(message)));
+      if (context.mounted) {
+        CustomSnackBar.show(
+          context,
+          "Failed to delete account: ${e.toString()}",
+          SnackBarType.error,
+        );
+      }
     }
   }
 }
