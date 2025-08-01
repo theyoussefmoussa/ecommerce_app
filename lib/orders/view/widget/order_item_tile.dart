@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/cart/models/cart_item.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
+
 
 class OrderItemTile extends StatelessWidget {
   final CartItem item;
@@ -13,7 +13,7 @@ class OrderItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: app_colors.deepChocolate.withValues(),
+      color: deepChocolate.withValues(),
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 3,
@@ -23,7 +23,7 @@ class OrderItemTile extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
           leading: CircleAvatar(
             radius: 22,
-            backgroundColor: app_colors.mochaBrown,
+            backgroundColor: mochaBrown,
             child: Text(
               '${item.quantity}',
               style: const TextStyle(
@@ -36,13 +36,13 @@ class OrderItemTile extends StatelessWidget {
             item.title,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              color: app_colors.lightPink,
+              color: lightPink,
               fontSize: 16,
             ),
           ),
           subtitle: Text(
             'x${item.quantity} @ \$${item.price.toStringAsFixed(2)}',
-            style: const TextStyle(color: app_colors.softRose),
+            style: const TextStyle(color: softRose),
           ),
           trailing: Text(
             '\$${(item.price * item.quantity).toStringAsFixed(2)}',

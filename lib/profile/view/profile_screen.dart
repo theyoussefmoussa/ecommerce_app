@@ -6,8 +6,6 @@ import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ecommerce_app/profile/controller/profile_controller.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -61,7 +59,7 @@ class ProfileScreen extends ConsumerWidget {
               onPressed: () =>
                   Navigator.pushNamed(context, '/editProfileScreen'),
               style: ElevatedButton.styleFrom(
-                backgroundColor:maincolor,
+                backgroundColor: maincolor,
                 foregroundColor: Colors.white,
                 shadowColor: Colors.white,
                 minimumSize: const Size.fromHeight(48),
@@ -80,9 +78,9 @@ class ProfileScreen extends ConsumerWidget {
 
   Widget _buildAppInfoCard(BuildContext context) {
     return Card(
-      color:maincolor,
+      color: maincolor,
       elevation: 3,
-      shadowColor:maincolor,
+      shadowColor: maincolor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -118,7 +116,7 @@ class ProfileScreen extends ConsumerWidget {
               onTap: () => Navigator.pushNamed(context, '/aboutUsScreen'),
               child: Container(
                 decoration: BoxDecoration(
-                  color:maincolor,
+                  color: maincolor,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
@@ -161,7 +159,7 @@ class ProfileScreen extends ConsumerWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: app_colors.softRose,
+        color: softRose,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -176,15 +174,15 @@ class ProfileScreen extends ConsumerWidget {
         leading: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: app_colors.mochaBrown.withOpacity(0.1),
+            color: mochaBrown.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(icon, color: app_colors.mochaBrown, size: 20),
+          child: Icon(icon, color: mochaBrown, size: 20),
         ),
         title: Text(
           title,
           style: TextStyle(
-            color: app_colors.deepChocolate,
+            color: deepChocolate,
             fontWeight: FontWeight.w600,
             fontSize: 14,
           ),
@@ -193,7 +191,7 @@ class ProfileScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(top: 2),
           child: Text(
             subtitle,
-            style: TextStyle(color: app_colors.mochaBrown, fontSize: 13),
+            style: TextStyle(color: mochaBrown, fontSize: 13),
           ),
         ),
       ),

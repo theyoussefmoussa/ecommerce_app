@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/auth/view/auth_form.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
+
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -31,7 +31,7 @@ class Signup extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       // ignore: deprecated_member_use
-                      color: app_colors.mochaBrown.withOpacity(0.1),
+                      color: mochaBrown.withOpacity(0.1),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),

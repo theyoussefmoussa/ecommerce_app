@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 
 class AuthButton extends StatelessWidget {
   final String label;
@@ -24,7 +23,7 @@ class AuthButton extends StatelessWidget {
 
     final BorderSide borderSide = isPrimary
         ? BorderSide.none
-        : const BorderSide(color: app_colors.lightPink);
+        : const BorderSide(color: lightPink);
 
     return SizedBox(
       width: double.infinity,

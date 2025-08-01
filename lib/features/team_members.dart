@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart' as app_colors;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 
 class TeamMemberTile extends StatelessWidget {
   final String name;
@@ -21,7 +21,7 @@ class TeamMemberTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: app_colors.softRose,
+        color: softRose,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -39,7 +39,7 @@ class TeamMemberTile extends StatelessWidget {
             backgroundImage:
                 profileImage.isNotEmpty ? AssetImage(profileImage) : null,
             child: profileImage.isEmpty
-                ? const Icon(Icons.person, color: app_colors.deepChocolate)
+                ? const Icon(Icons.person, color: deepChocolate)
                 : null,
           ),
           const SizedBox(width: 12),
@@ -49,14 +49,14 @@ class TeamMemberTile extends StatelessWidget {
               Text(
                 name,
                 style: TextStyle(
-                  color: app_colors.deepChocolate,
+                  color: deepChocolate,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(height: 2),
               Text(
                 role.isNotEmpty ? role : "Team Member",
-                style: TextStyle(color: app_colors.mochaBrown, fontSize: 13),
+                style: TextStyle(color: mochaBrown, fontSize: 13),
               ),
             ],
           ),

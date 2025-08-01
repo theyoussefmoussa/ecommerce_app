@@ -5,8 +5,8 @@
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ecommerce_app/core/utils/constants/constant_colors.dart'
-    as app_colors;
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
+
 import 'package:ecommerce_app/profile/controller/profile_controller.dart';
 
 class AboutUsScreen extends ConsumerWidget {
@@ -18,7 +18,7 @@ class AboutUsScreen extends ConsumerWidget {
     final displayName = user?.displayName ?? "Guest";
 
     return Scaffold(
-      backgroundColor: app_colors.lightPink,
+      backgroundColor: lightPink,
       appBar: const CustomAppBar(title: 'About Us'),
       body: ListView(
         padding: const EdgeInsets.all(20),
@@ -29,7 +29,7 @@ class AboutUsScreen extends ConsumerWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: app_colors.deepChocolate,
+              color: deepChocolate,
             ),
           ),
           const SizedBox(height: 20),
@@ -40,14 +40,14 @@ class AboutUsScreen extends ConsumerWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: app_colors.deepChocolate,
+              color: deepChocolate,
             ),
           ),
           const SizedBox(height: 10),
           Text(
             'This app was developed with passion by a team of motivated computer science students. '
             'Our goal is to deliver a smooth e-commerce experience with great performance and a beautiful design.',
-            style: TextStyle(fontSize: 14, color: app_colors.mochaBrown),
+            style: TextStyle(fontSize: 14, color: mochaBrown),
           ),
 
           const SizedBox(height: 30),
@@ -58,7 +58,7 @@ class AboutUsScreen extends ConsumerWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: app_colors.deepChocolate,
+              color: deepChocolate,
             ),
           ),
           const SizedBox(height: 16),
@@ -81,7 +81,7 @@ class AboutUsScreen extends ConsumerWidget {
       margin: const EdgeInsets.symmetric(vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: app_colors.softRose,
+        color: softRose,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -100,7 +100,7 @@ class AboutUsScreen extends ConsumerWidget {
                 ? AssetImage(profileImage)
                 : null,
             child: profileImage.isEmpty
-                ? const Icon(Icons.person, color: app_colors.deepChocolate)
+                ? const Icon(Icons.person, color: deepChocolate)
                 : null,
           ),
           const SizedBox(width: 12),
@@ -110,14 +110,14 @@ class AboutUsScreen extends ConsumerWidget {
               Text(
                 name,
                 style: TextStyle(
-                  color: app_colors.deepChocolate,
+                  color: deepChocolate,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(height: 2),
               Text(
                 role.isNotEmpty ? role : "Team Member",
-                style: TextStyle(color: app_colors.mochaBrown, fontSize: 13),
+                style: TextStyle(color: mochaBrown, fontSize: 13),
               ),
             ],
           ),
