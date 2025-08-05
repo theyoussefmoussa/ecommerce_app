@@ -2,8 +2,7 @@ import 'package:ecommerce_app/app_router.dart';
 import 'package:ecommerce_app/auth/controller/auth_state_provider.dart';
 import 'package:ecommerce_app/auth/view/welcome.dart';
 import 'package:ecommerce_app/main_screen.dart';
-import 'package:ecommerce_app/core/utils/constants/app_text_style.dart'
-    as title;
+import 'package:ecommerce_app/core/utils/constants/app_text_style.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: title.AppTextStyle.appName,
+      title: AppTextStyle.appName,
       onGenerateRoute: AppRouter.generateRoute,
 
       home: authState.when(

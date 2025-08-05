@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart'; // ✅ import your snackbar
+import 'package:ecommerce_app/core/utils/constants/snackbar_utils.dart'; 
 
 class SettingsController {
   /// Deletes the currently signed-in Firebase user.

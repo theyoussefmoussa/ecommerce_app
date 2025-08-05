@@ -5,7 +5,6 @@ class ProductRepository {
   final Dio _dio = Dio();
   static const String _baseUrl = 'https://dummyjson.com/products';
 
-  // جلب المنتجات
   Future<List<Product>> fetchProducts() async {
     try {
       final response = await _dio.get('$_baseUrl?limit=50');
@@ -17,7 +16,6 @@ class ProductRepository {
     }
   }
 
-  // البحث عن منتج
   Future<List<Product>> searchProducts(String query) async {
     try {
       final response = await _dio.get(

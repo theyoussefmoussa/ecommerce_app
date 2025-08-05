@@ -15,11 +15,9 @@ class AuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color backgroundColor = isPrimary
-        ? const Color(0xFF755dc1) // البنفسجي
-        : Colors.white;
+    final Color backgroundColor = isPrimary ? maincolor : whiteColor;
 
-    final Color textColor = isPrimary ? Colors.white : Colors.black;
+    final Color textColor = isPrimary ? whiteColor : Colors.black;
 
     final BorderSide borderSide = isPrimary
         ? BorderSide.none

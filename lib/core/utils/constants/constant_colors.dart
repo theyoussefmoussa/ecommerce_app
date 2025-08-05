@@ -8,3 +8,5 @@ const Color errorRed = Color(0xFFD32F2F); // Error
 const Color warningOrange = Color(0xFFFFA000); // Warning
 const Color maincolor = Color(0xff6b63ff); // Info
 const Color priceGreen = Color(0xFF43A047);
+const Color darker = Color(0xFF1D1A31);
+const Color whiteColor = Colors.white;

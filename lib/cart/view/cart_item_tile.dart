@@ -19,7 +19,6 @@ class CartItemTile extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         child: Row(
           children: [
-            // الصورة
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
@@ -36,7 +35,6 @@ class CartItemTile extends ConsumerWidget {
             ),
             const SizedBox(width: 12),
 
-            // تفاصيل المنتج (العنوان والسعر)
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +58,6 @@ class CartItemTile extends ConsumerWidget {
               ),
             ),
 
-            // أزرار التحكم (نقص، كمية، زيادة، حذف)
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [

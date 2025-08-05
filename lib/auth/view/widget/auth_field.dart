@@ -1,5 +1,4 @@
-// 📁 lib/utils/view/auth_field.dart
-
+import 'package:ecommerce_app/core/utils/constants/constant_colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthField extends StatelessWidget {
@@ -25,32 +24,32 @@ class AuthField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6), // ⬅ قللنا التباعد شوية
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: TextFormField(
         controller: controller,
         validator: validator,
         obscureText: obscureText,
-        style: const TextStyle(color: Color(0xFF1D1A31)),
+        style: const TextStyle(color: darker),
         decoration: InputDecoration(
           labelText: label,
           hintText: hint,
-          prefixIcon: Icon(icon, color: Color(0xFF755dc1)), // بنفسجي
-          labelStyle: const TextStyle(color: Color(0xFF1D1A31)),
-          hintStyle: const TextStyle(color: Color(0xFF755dc1)),
+          prefixIcon: Icon(icon, color: maincolor),
+          labelStyle: const TextStyle(color: darker),
+          hintStyle: const TextStyle(color: maincolor),
           filled: true,
           fillColor: fillColor ?? Colors.white,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(
-              color: Color(0xFF755dc1), // بنفسجي
+              color: maincolor,
               width: 1.2,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(
-              color: Color(0xFF1D1A31), // غامق
+              color: darker,
               width: 1.6,
             ),
           ),

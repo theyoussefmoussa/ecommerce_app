@@ -69,7 +69,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
               },
               child: const Text(
                 'Back to Home',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: whiteColor),
               ),
             ),
           ],
@@ -106,7 +106,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
        appBar: const CustomAppBar(title: 'Delivery Information'),
       body: Form(
         key: _formKey,
@@ -137,7 +137,7 @@ class _DeliveryInfoPageState extends ConsumerState<DeliveryInfoPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Colors.white,
+                  color: whiteColor,
                 ),
               ),
             ),

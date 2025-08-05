@@ -2,7 +2,7 @@
 
 // ignore_for_file: deprecated_member_use
 
-import 'package:ecommerce_app/core/catitalize_all_words.dart';
+import 'package:ecommerce_app/core/utils/catitalize_all_words.dart';
 import 'package:ecommerce_app/core/utils/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
