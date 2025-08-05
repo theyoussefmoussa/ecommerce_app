@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/auth/view/widget/auth_button.dart';
+import 'package:ecommerce_app/core/utils/constants/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/app_router.dart';
+
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
@@ -74,7 +76,7 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                     ),
                     const SizedBox(height: 8),
                     const Text(
-                      'To E-Commerce',
+                      'To ${AppTextStyle.appName}',
                       style: TextStyle(fontSize: 20, color: Colors.black),
                       textAlign: TextAlign.center,
                     ),
